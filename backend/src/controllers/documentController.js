@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const Document = require("../models/Document");
+const Document = require("../models/Documents");
 
 // @desc    Upload document
 // @route   POST /api/documents/upload
