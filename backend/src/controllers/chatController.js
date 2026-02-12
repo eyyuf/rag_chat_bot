@@ -26,7 +26,7 @@ const sendMessage = asyncHandler(async (req, res) => {
         conversation: conversationId,
         role: "assistant",
         content: aiResponseContent,
-        sources: [], // fill with RAG sources
+        source: [], // fill with RAG sources
     });
 
     res.status(201).json({ userMessage, aiMessage });

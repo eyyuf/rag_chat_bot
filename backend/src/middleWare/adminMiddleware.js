@@ -2,7 +2,7 @@ const express = require("express")
 const asyncHandler = require("express-async-handler")
 const User = require("../models/Users")
 
-const admin = (req, res, next) => {
+const adminOnly = (req, res, next) => {
     if (req.user &&
         req.user.role == "admin"
     ) {
@@ -13,4 +13,4 @@ const admin = (req, res, next) => {
     }
 }
 
-module.exports = { admin };
+module.exports = { adminOnly };

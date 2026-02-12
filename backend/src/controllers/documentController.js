@@ -34,7 +34,7 @@ const deleteDocument = asyncHandler(async (req, res) => {
         throw new Error("Document not found");
     }
 
-    await document.remove();
+    await document.deleteOne();
     res.status(200).json({ message: "Document removed" });
 });
 

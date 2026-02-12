@@ -5,7 +5,7 @@ const authRoutes = require("./src/routes/authRoutes");
 const chatRoutes = require("./src/routes/chatRoute");
 const documentRoutes = require("./src/routes/documentRoute");
 
-app = express();
+const app = express();
 
 dotenv.config();
 connectDB();
