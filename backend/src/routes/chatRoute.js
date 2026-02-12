@@ -8,7 +8,7 @@ const {
     getUserConversations
 } = require("../controllers/chatController");
 
-const { protect } = require("../middleware/authMiddleware");
+const { protect } = require("../middleWare/authMiddleware");
 
 // Create a new conversation
 router.post("/conversation", protect, createConversation);

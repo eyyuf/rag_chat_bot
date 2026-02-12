@@ -3,8 +3,8 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const { uploadDocument, getDocuments, deleteDocument } = require("../controllers/documentController");
-const { protect } = require("../middleware/authMiddleware");
-const { adminOnly } = require("../middleware/adminMiddleware");
+const { protect } = require("../middleWare/authMiddleware");
+const { adminOnly } = require("../middleWare/adminMiddleware");
 
 // Multer Storage Configuration
 const storage = multer.diskStorage({
