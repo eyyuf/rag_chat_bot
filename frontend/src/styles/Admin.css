@@ -1,0 +1,71 @@
+.admin-page {
+    padding: 2rem 0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.upload-section {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.upload-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.file-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px dashed #ddd;
+    border-radius: var(--border-radius);
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.doc-list {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.doc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.doc-info h4 {
+    margin-bottom: 0.2rem;
+}
+
+.doc-info p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.delete-btn {
+    color: #e74c3c;
+    background: none;
+    font-size: 1.2rem;
+}
