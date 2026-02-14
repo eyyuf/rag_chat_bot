@@ -1,71 +1,177 @@
+/* Admin Dashboard Styles */
+
 .admin-page {
-    padding: 2rem 0;
+    padding: 3rem 0 10rem 0;
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-black);
 }
 
 .admin-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-dark);
 }
 
+.admin-header h2 {
+    color: var(--white);
+    font-size: 2rem;
+    letter-spacing: -1px;
+}
+
+/* Upload Section */
 .upload-section {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 3rem;
+    transition: var(--transition);
+}
+
+.upload-section:hover {
+    border-color: var(--gold-primary);
+}
+
+.upload-section h3 {
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .upload-form {
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .file-input {
     flex: 1;
-    padding: 1rem;
-    border: 2px dashed #ddd;
-    border-radius: var(--border-radius);
+    padding: 3rem;
+    border: 2px dashed var(--border-dark);
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.02);
     text-align: center;
     cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.file-input:hover {
+    border-color: var(--gold-primary);
+    background-color: rgba(212, 175, 55, 0.05);
+    color: var(--gold-primary);
 }
 
 .upload-btn {
-    padding: 0.8rem 2rem;
-    background-color: var(--accent);
-    color: white;
-    border-radius: 4px;
+    padding: 1rem 2rem;
+    background-color: var(--gold-primary);
+    color: #000;
+    border-radius: var(--radius-md);
     font-weight: 600;
+    align-self: flex-start;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.upload-btn:hover:not(:disabled) {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.upload-btn:disabled {
+    background-color: var(--border-dark);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* Document List */
+.doc-list-container h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .doc-list {
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .doc-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem;
-    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.doc-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--gold-primary);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.doc-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-dark);
+}
+
+.doc-item:hover::before {
+    opacity: 1;
 }
 
 .doc-info h4 {
-    margin-bottom: 0.2rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.doc-info h4 svg {
+    color: var(--gold-primary);
 }
 
 .doc-info p {
-    font-size: 0.8rem;
-    color: var(--text-light);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 .delete-btn {
-    color: #e74c3c;
-    background: none;
-    font-size: 1.2rem;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    transform: scale(1.1);
 }

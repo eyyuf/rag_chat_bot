@@ -1,75 +1,196 @@
+/* Premium Landing Page Design */
+
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523841589119-b444fe055952?auto=format&fit=crop&q=80&w=2000') center/cover;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--white);
+    position: relative;
+    border-bottom: 1px solid var(--border-dark);
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.25rem;
+    max-width: 650px;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    padding: 1rem 2.5rem;
+    background: var(--gold-primary);
+    color: #000;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary);
+    margin-bottom: 4rem;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-primary);
+    margin: 1rem auto 0;
 }
 
 .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
+
+.destination-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+    transition: var(--transition);
+    position: relative;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.destination-image-container {
+    height: 240px;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-card);
+}
+
+.destination-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Ensure it behaves like a block */
+    transition: var(--transition);
+}
+
+.destination-card:hover .destination-image {
+    transform: scale(1.1);
+}
+
+.destination-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    pointer-events: none;
+}
+
+.destination-info {
+    padding: 2rem;
+}
+
+.destination-info h3 {
+    margin-bottom: 0.75rem;
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+}
+
+.destination-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Section specific styles for better contrast */
+.about {
+    background-color: var(--bg-card);
+    position: relative;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.travel-tips {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-dark);
+}
+
+.destinations {
+    background-color: var(--bg-black);
+}
+
+.tips-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.destination-card {
-    background: white;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
+.tip-item {
+    padding: 2.5rem;
+    background: var(--bg-black);
+    /* Contrast against card bg */
+    border: 1px solid var(--border-dark);
+    border-left: 4px solid var(--gold-primary);
+    border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
-.destination-card:hover {
-    transform: translateY(-5px);
+.tip-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
 }
 
-.destination-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+.tip-item h3 {
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.25rem;
 }
 
-.destination-info {
-    padding: 1.5rem;
-}
-
-.destination-info h3 {
-    margin-bottom: 0.5rem;
-}
-
-.tips-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.tip-item {
-    flex: 1;
-    min-width: 250px;
-    padding: 2rem;
-    background: white;
-    border-left: 5px solid var(--accent);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+.tip-item p {
+    color: var(--text-secondary);
 }

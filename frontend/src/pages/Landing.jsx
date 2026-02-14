@@ -1,16 +1,30 @@
 import React from 'react';
 import '../styles/Landing.css';
 
+// Import local assets
+import heroBg from '../assets/images/hero.png';
+import lalibelaImg from '../assets/images/lalibela.png';
+import simienImg from '../assets/images/semen_mountain.png';
+import danakilImg from '../assets/images/dankil.png';
+
 const Landing = () => {
     const destinations = [
-        { title: 'Lalibela', desc: 'Famous for its rock-hewn churches.', img: 'https://images.unsplash.com/photo-1579717757962-d599c7595bc6?auto=format&fit=crop&q=80&w=800' },
-        { title: 'Simien Mountains', desc: 'Stunning landscapes and unique wildlife.', img: 'https://images.unsplash.com/photo-1629731674431-27ec968d66df?auto=format&fit=crop&q=80&w=800' },
-        { title: 'Danakil Depression', desc: 'One of the hottest and lowest places on Earth.', img: 'https://images.unsplash.com/photo-1563812836236-8db7145719a6?auto=format&fit=crop&q=80&w=800' }
+        { title: 'Lalibela', desc: 'Step back in time at the rock-hewn churches, a subterranean wonder of the world.', img: lalibelaImg },
+        { title: 'Simien Mountains', desc: 'Trek through dramatic peaks and encounter unique wildlife like the Gelada baboon.', img: simienImg },
+        { title: 'Danakil Depression', desc: 'Witness the unearthly colors of one of the hottest places on the planet.', img: danakilImg }
     ];
 
     return (
         <div className="landing-page">
-            <header className="hero">
+            <header
+                className="hero"
+                style={{
+                    backgroundImage: `linear-gradient(to bottom, rgba(5, 5, 5, 0.6), var(--bg-black)), url(${heroBg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
                 <div className="container">
                     <h1>Discover Ethiopia</h1>
                     <p>Experience the Land of Origins, from ancient civilizations to breathtaking landscapes.</p>
@@ -30,10 +44,9 @@ const Landing = () => {
                     <div className="destinations-grid">
                         {destinations.map((dest, idx) => (
                             <div key={idx} className="destination-card">
-                                <div
-                                    className="destination-image"
-                                    style={{ backgroundImage: `url(${dest.img})` }}
-                                ></div>
+                                <div className="destination-image-container">
+                                    <img src={dest.img} alt={dest.title} className="destination-image" />
+                                </div>
                                 <div className="destination-info">
                                     <h3>{dest.title}</h3>
                                     <p>{dest.desc}</p>
